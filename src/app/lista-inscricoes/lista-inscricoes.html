@@ -1,0 +1,47 @@
+<div class="container">
+    <h2>Lista de Inscrições</h2>
+
+    <div class="contadores">
+        <p><strong>Total:</strong> {{ total }}</p>
+        <p><strong>Confirmadas:</strong> {{ confirmadas }}</p>
+        <p><strong>Pendentes:</strong> {{ pendentes }}</p>
+    </div>
+
+    <div *ngIf="inscricoes.length === 0" class="vazio">
+        <p>Nenhuma inscrição cadastrada</p>
+    </div>
+
+    <table *ngIf="inscricoes.length > 0">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>Oficina</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of inscricoes" [class.status-pendente]="item.status === 'Pendente'"
+                [class.status-confirmada]="item.status === 'Confirmada'">
+                <td>{{ item.nome }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.oficina }}</td>
+                <td>{{ item.status }}</td>
+                <td>
+                    <button class="btn-confirmar" (click)="confirmar(item.id)"
+                        [disabled]="item.status === 'Confirmada'">
+                        Confirmar Inscrição
+                    </button>
+
+                    <button class="btn-remover" (click)="remover(item.id)">
+                        Remover
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a routerLink="/cadastrar">Voltar para o Cadastro</a>
+</div>

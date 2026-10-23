@@ -1,0 +1,65 @@
+.container {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #e18ec2;
+    border-radius: 8px;
+}
+
+.status-pendente {
+    background-color: rgb(242, 242, 174);
+}
+
+.status-confirmada {
+    background-color: #458645;
+}
+
+.contadores {
+    display: flex;
+    gap: 20px;
+    background-color: #e18fc5;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-confirmar {
+    background-color: #458645;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-confirmar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-remover {
+    background-color: #e79d60;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+a {
+    color: #ca13ca;
+}
